@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+::selection {
+  color: #0a0a0a;
+  background-color: #BAD1F3;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+.price-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dollar-sign {
+  color: #4e6bea;
+  font-weight: 600;
+  padding-right: 3px;
+  font-size: 1.6rem; /* Smaller font size */
+  margin-bottom: 0.2rem; /* Adjust margin to align with the bottom */
+}
+
+.text-light {
+  --tw-text-opacity: 0.8;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1)) /* #000000 */;
+}
+
+.rounded-more {
+  border-radius: 12px /* 6px */;
+}
+
+.price-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dollar-sign {
+  font-size: 1.5rem; /* Smaller font size */
+  margin-bottom: 0.2rem; /* Adjust margin to align with the bottom */
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
