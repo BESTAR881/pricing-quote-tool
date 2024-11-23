@@ -4,7 +4,7 @@ const OptionsForm = ({ setPrice }) => {
   const [type, setType] = useState('');
   const [project, setProject] = useState('');
   const [size, setSize] = useState('');
-  const [features, setFeatures] = useState([]);
+  const [features, setFeatures] = useState('');
   const [urgency, setUrgency] = useState('');
 
   // Update the price based on selected options
@@ -33,7 +33,7 @@ const OptionsForm = ({ setPrice }) => {
         price += 300;
         break;
       case 'mobileapp':
-        price += 250;
+        price += 200;
         break;
       case 'other':
         price += 400;
@@ -54,16 +54,14 @@ const OptionsForm = ({ setPrice }) => {
     }
 
     // Adjust price based on selected features
-    features.forEach((feature) => {
-      switch (feature) {
-        case 'smallUIs':
-          price *= 0.5;
-          break;
-        case 'entirePlatform':
-          price *= 2;
-          break;
-      }
-    });
+    switch (features) {
+      case 'smallUIs':
+        price *= 0.5;
+        break;
+      case 'entirePlatform':
+        price *= 2;
+        break;
+    }
 
     // Adjust price based on urgency
     switch (urgency) {
@@ -90,7 +88,6 @@ const OptionsForm = ({ setPrice }) => {
       {label}
     </button>
   );
-  
 
   return (
     <form className="space-y-6">
@@ -158,14 +155,8 @@ const OptionsForm = ({ setPrice }) => {
               <OptionButton
                 key={value}
                 label={label}
-                isActive={features.includes(value)}
-                onClick={() =>
-                  setFeatures((prev) =>
-                    prev.includes(value)
-                      ? prev.filter((f) => f !== value)
-                      : [...prev, value]
-                  )
-                }
+                isActive={features === value}
+                onClick={() => setFeatures(features === value ? '' : value)}
               />
             );
           })}

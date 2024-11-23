@@ -66,3 +66,18 @@ body {
   opacity: 1;
   transition: opacity 0.1s ease-in;
 }
+
+.animated-digit {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.price-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dollar-sign {
+  font-size: 1.5rem; /* Smaller font size */
+  margin-bottom: 0.2rem; /* Adjust margin to align with the bottom */
+}

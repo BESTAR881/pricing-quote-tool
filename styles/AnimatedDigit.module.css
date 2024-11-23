@@ -1,0 +1,12 @@
+.animatedDigit {
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out; /* Match the timing in the JS logic */
+}
+
+.fadeOut {
+  opacity: 0; /* Make the digit invisible */
+}
+
+.fadeIn {
+  opacity: 1; /* Make the digit visible */
+}

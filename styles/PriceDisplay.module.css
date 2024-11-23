@@ -1,0 +1,12 @@
+.priceContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dollarSign {
+  font-size: 1.5rem; /* Smaller font size */
+  color: #4e6bea;
+  font-weight: 700;
+  margin-right: 3px;
+  margin-bottom: 0.2rem; /* Adjust margin to align with the bottom */
+}
